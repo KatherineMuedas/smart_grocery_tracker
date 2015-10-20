@@ -1,0 +1,28 @@
+- unless smart_listing.empty?
+  %table.table.table-striped
+    %thead
+      %th.col-md-3= "Name"
+      %th.col-md-3= "Product type"
+      %th.col-md-4= "Quantity"
+      %th.col-md-4= "Unit measurement"
+      %th.col-md-4= "Expiration date"
+      %th.col-md-4= "price"
+      %th.col-md-4= "Unit price"
+      %th.col-md-4= "Store"
+    %tbody
+      - smart_listing.collection.each do |product|
+        %tr
+          %td= product.name
+          %td= product.product_type
+          %td= product.quantity 
+          %td= product.unit_measurement
+          %td= product.expiration_date
+          %td= product.price
+          %td= product.unit_price
+          %td= product.store
+
+  -# Render nice pagination links fitted for Bootstrap 3 by default
+  = smart_listing.paginate
+  = smart_listing.pagination_per_page_links
+- else
+  %p.warning No records!
