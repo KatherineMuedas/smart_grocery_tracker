@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  product_type: MyString
+  unit_measurement: MyString
+  store: MyString
+  product_cycle: 1
+  quantity: 1
+  expiration_date: 2015-10-20
+  purchase_date: 2015-10-20
+  price: 1.5
+  unit_price: 1.5
+  user_id: 
+
+two:
+  name: MyString
+  product_type: MyString
+  unit_measurement: MyString
+  store: MyString
+  product_cycle: 1
+  quantity: 1
+  expiration_date: 2015-10-20
+  purchase_date: 2015-10-20
+  price: 1.5
+  unit_price: 1.5
+  user_id: 
