@@ -1,1 +1,31 @@
-= smart_listing_render :products
+=smart_listing_render(:products_to_buy)
+
+/ %table.table
+/   %thead
+/     %tr
+/       %th= "Name"
+/       %th= "Product type"
+/       %th= "Quantity"
+/       %th= "Unit measurement"
+/       %th= "Expiration date"
+/       %th= "price"
+/       %th= "Unit price"
+/       %th= "Store"
+/       %th
+
+/   %tbody
+/     - @products.each do |product|
+/       %tr
+/         %td= product.name
+/         %td= product.product_type
+/         %td= product.quantity 
+/         %td= product.unit_measurement
+/         %td= product.expiration_date
+/         %td= product.price
+/         %td= product.unit_price
+/         %td= product.store
+/         %td= link_to "Edit", edit_product_path(product.id)
+      
+      
+        
+

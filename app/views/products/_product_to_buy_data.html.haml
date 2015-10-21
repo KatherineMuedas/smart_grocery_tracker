@@ -1,0 +1,10 @@
+%td= product.name
+%td= product.product_type
+%td= product.quantity 
+%td= product.unit_measurement
+%td= product.expiration_date
+%td= product.price
+%td= product.unit_price
+%td= product.store
+%td.actions= smart_listing_item_actions [{name: :edit,    url: edit_product_path(product)}, {name: :destroy, url: product_path(product), confirmation: "Are you sure you want to delete this?"}]
+
