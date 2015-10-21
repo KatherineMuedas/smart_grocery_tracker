@@ -2,7 +2,6 @@
   = simple_form_for object, url: object.new_record? ? products_path : product_path(object), remote: true, html: {class: "form-horizontal"} do |f|
     = f.input :name
     = f.input :product_type
-    = f.input :product_cycle
     = f.input :quantity
     = f.input :unit_measurement
     = f.input :store
@@ -10,6 +9,7 @@
     = f.input :unit_price
     = f.input :expiration_date
     = f.input :purchase_date
+    = f.hidden_field :product_cycle, value: f.object.product_cycle 
 
     = f.submit "Save", class: "btn btn-primary"
     %button.btn.btn-link.cancel Cancel
