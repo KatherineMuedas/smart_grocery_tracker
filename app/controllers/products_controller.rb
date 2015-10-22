@@ -4,9 +4,9 @@ class ProductsController < ApplicationController
   
   before_filter :find_product, except: [:index, :new, :create]
   def index
-    products_to_buy_scope = Product.where(product_cycle: 0)
-    products_to_buy_scope = products_to_buy_scope.where('name ilike ?', "%#{params[:filter]}%") if params[:filter]
-    @products = smart_listing_create(:products_to_buy, products_to_buy_scope, partial: "products/products_to_buy_list", default_sort: {name: "asc"})
+    products_scope = Product.where(product_cycle: 0)
+    products_scope = products_scope.where('name ilike ?', "%#{params[:filter]}%") if params[:filter]
+    @products = smart_listing_create(:products_to_buy, products_scope, partial: "products/products_to_buy_list", default_sort: {name: "asc"})
   end
 
   def new
