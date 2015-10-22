@@ -13,11 +13,12 @@
     %tbody
       - smart_listing.collection.each do |product|
         %tr.editable{data: {id: product.id}}
-          = smart_listing.render partial: 'products/product_to_buy_data', locals: {product: product}
+          = smart_listing.render object: product, partial: 'products/product_to_buy_data', locals: {object: product}
 
       = smart_listing.item_new colspan: 12, link: new_product_path
 
   = smart_listing.paginate 
+  = smart_listing.pagination_per_page_links
 - else
   %p.warning No records!
 
