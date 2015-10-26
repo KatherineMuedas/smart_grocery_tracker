@@ -7,6 +7,7 @@ class FridgesController < ApplicationController
     products_scope = Product.where(product_cycle: 1)
     products_scope = products_scope.where('name ilike ?', "%#{params[:filter]}%") if params[:filter]
     @products = smart_listing_create(:products_stock, products_scope, partial: "fridges/products_stock_list", default_sort: {name: "asc"})
+    set_selected_products
   end
   def new
     @product = Product.new

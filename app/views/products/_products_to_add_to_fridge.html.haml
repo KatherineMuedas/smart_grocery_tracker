@@ -4,6 +4,6 @@
     = "Move to fridge"
   = link_to "Clear", products_path(:clear => true), :class => "btn btn-link pull-right", :remote => true
   %h4
-    = "You have selected "
-    = @selected_products.count
-    = "items to move to your personal inventory"
+    = "You have selected"
+    = pluralize( @selected_products.count, "item")
+    = "to move to your personal inventory"
