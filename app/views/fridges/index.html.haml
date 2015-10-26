@@ -1,4 +1,4 @@
-%h1 Things in my fridge
+%h1 Things in my fridge or pantry
 = smart_listing_controls_for(:products_stock, {class: "form-inline text-right"}) do
   .form-group.filter.input-append
     = text_field_tag :filter, '', class: "search form-control", placeholder: "Search...", autocomplete: :off
@@ -7,4 +7,4 @@
     %span.glyphicon.glyphicon-search
       
          
-=smart_listing_render(:products_stock, data: {callback_href: select_fridges_path})
+=smart_listing_render(:products_stock, data: {callback_href: select_products_to_list_path})

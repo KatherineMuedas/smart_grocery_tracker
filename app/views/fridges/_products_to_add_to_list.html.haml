@@ -1,0 +1,9 @@
+- if @selected_products.present?
+  = link_to move_to_list_path, :class => "btn btn-primary pull-right", :remote => true, :method => :put do
+    %i.glyphicon.glyphicon-send
+    = "Move to Grocery List"
+  = link_to "Clear", fridges_path(:clear => true), :class => "btn btn-link pull-right", :remote => true
+  %h4
+    = "You have selected "
+    = @selected_products.count
+    = "items to move to your grocery list"
