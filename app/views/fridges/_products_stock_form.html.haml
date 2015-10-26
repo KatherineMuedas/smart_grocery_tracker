@@ -1,16 +1,32 @@
 %td{colspan: 12}
-  = simple_form_for object, url: object.new_record? ? fridges_path : fridge_path(object), remote: true, html: {class: "form-horizontal"} do |f|
-    = f.input :name
-    = f.input :product_type
-    = f.input :quantity
-    = f.input :unit_measurement
-    = f.input :store
-    = f.input :price
-    = f.input :unit_price
-    = f.input :purchase_date
-    = f.input :expiration_date
-    = f.input :purchase_date
-    = f.hidden_field :product_cycle, value: "stock"
+  .row
+    .col-sm-12
+      = simple_form_for object, url: object.new_record? ? fridges_path : fridge_path(object), remote: true, html: {class: "form-horizontal"} do |f|
+        .row
+          .col-sm-6
+            = f.input :name
+          .col-sm-6
+            = f.input :product_type, collection: Product::PRODUCT_CATEGORIES, prompt: "Select categories"
+        .row
+          .col-sm-6
+            = f.input :quantity
+          .col-sm-6
+            = f.input :unit_measurement, collection: Product::PRODUCT_MEASUREMENTS, prompt: "Select measurement"
+        .row
+          .col-sm-6
+            = f.input :store
+          .col-sm-6
+            = f.input :price
+        / # = f.input :unit_price
+        .row
+          .col-sm-6
+            = f.input :expiration_date
+          .col-sm-6 
+            = f.input :purchase_date
+        = f.hidden_field :product_cycle, value: 'stock'
 
-    = f.submit "Save", class: "btn btn-primary"
-    %button.btn.btn-link.cancel Cancel
+        = f.submit "Save", class: "btn btn-success"
+        %button.btn.btn-default.cancel Cancel
+
+
+

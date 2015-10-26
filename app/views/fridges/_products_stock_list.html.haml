@@ -1,23 +1,25 @@
-%table.table.table-striped
-  %thead
-    %tr
-      %th 
-      %th= smart_listing.sortable "Name", "name"
-      %th= smart_listing.sortable "Product Type", "product_type"
-      %th= smart_listing.sortable "Quantity", "quantity"
-      %th= smart_listing.sortable "Unit measurement", "unit_measurement"
-      %th= smart_listing.sortable "Purchase date", "purchase_date"
-      %th= smart_listing.sortable "Expiration date", "expiration_date"
-      %th= smart_listing.sortable "Price", "price"
-      %th= smart_listing.sortable "Unit price", "unit_price"
-      %th= smart_listing.sortable "Store", "store"
-  %tbody
-    - smart_listing.collection.each do |product|
-      -if product.stock?
-        %tr.editable{data: {id: product.id}}
-          = smart_listing.render object: product, partial: 'fridges/product_stock_data', locals: {object: product}
+.table-responsive.pad-top-30
+  %table.table.table-striped.table-hover.table-bordered
+    %thead
+      %tr
+        %th 
+        %th= smart_listing.sortable "Name", "name"
+        %th= smart_listing.sortable "Product Type", "product_type"
+        %th= smart_listing.sortable "Quantity", "quantity"
+        %th= smart_listing.sortable "Unit measurement", "unit_measurement"
+        %th= smart_listing.sortable "Purchase date", "purchase_date"
+        %th= smart_listing.sortable "Expiration date", "expiration_date"
+        %th= smart_listing.sortable "Price", "price"
+        %th= smart_listing.sortable "Unit price", "unit_price"
+        %th= smart_listing.sortable "Store", "store"
+        %th
+    %tbody
+      - smart_listing.collection.each do |product|
+        -if product.stock?
+          %tr.editable{data: {id: product.id}}
+            = smart_listing.render object: product, partial: 'fridges/product_stock_data', locals: {object: product}
 
-    = smart_listing.item_new colspan: 12, link: new_fridge_path
+      = smart_listing.item_new colspan: 12, link: new_fridge_path
 
 = smart_listing.paginate 
 = smart_listing.pagination_per_page_links

@@ -9,6 +9,7 @@ class FridgesController < ApplicationController
     @products = smart_listing_create(:products_stock, products_scope, partial: "fridges/products_stock_list", default_sort: {name: "asc"})
     set_selected_products
   end
+
   def new
     @product = Product.new
   end
@@ -23,7 +24,6 @@ class FridgesController < ApplicationController
   end
 
   def edit
-  
   end
 
   def update

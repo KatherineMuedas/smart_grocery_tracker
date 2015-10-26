@@ -1,4 +1,9 @@
 <%# add navigation links to this file %>
+<% if params[:controller] == 'products' %>
+   <li><%= link_to 'Go to inventory', fridges_path, class: "text-orange" %></li>
+<% elsif params[:controller] == "fridges"%>
+   <li><%= link_to 'See grocery list', products_path,  class: "text-orange"  %></li>
+<% end %>
 <% if user_signed_in? %>
   <li><%= link_to 'Edit account', edit_user_registration_path %></li>
   <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>

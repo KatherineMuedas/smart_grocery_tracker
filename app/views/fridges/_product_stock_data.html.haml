@@ -1,5 +1,5 @@
 - if object.stock?
-  %td= check_box_tag :checkbox, "product_selection[#{object.id}]", session[:selected_products].try(:[], object.id.to_s) == 1, :class => "callback", :autocomplete => "off"
+  %td.text-center= check_box_tag :checkbox, "product_selection[#{object.id}]", session[:selected_products].try(:[], object.id.to_s) == 1, :class => "callback", :autocomplete => "off"
   %td= object.name
   %td= object.product_type
   %td= object.quantity 
@@ -9,4 +9,4 @@
   %td= object.price
   %td= object.unit_price
   %td= object.store
-  %td.actions= smart_listing_item_actions [{name: :edit,    url: edit_fridge_path(object)}, {name: :destroy, url: fridge_path(object), confirmation: "Are you sure you want to delete this?"}]
+  %td.actions.text-center= smart_listing_item_actions [{name: :edit, url: edit_fridge_path(object)}, {name: :destroy, url: fridge_path(object), confirmation: "Are you sure you want to delete this?"}]
