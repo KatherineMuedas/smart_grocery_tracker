@@ -1,6 +1,7 @@
 %table.table.table-striped
   %thead
     %tr 
+      %th
       %th= smart_listing.sortable "Name", "name"
       %th= smart_listing.sortable "Product Type", "product_type"
       %th= smart_listing.sortable "Quantity", "quantity"
@@ -11,14 +12,16 @@
       %th= smart_listing.sortable "Store", "store"
   %tbody
     - smart_listing.collection.each do |product|
-      %tr.editable{data: {id: product.id}}
-        = smart_listing.render object: product, partial: 'products/product_to_buy_data', locals: {object: product}
+      -if product.to_buy?
+        %tr.editable{data: {id: product.id}}
+          = smart_listing.render object: product, partial: 'products/product_to_buy_data', locals: {object: product}
 
     = smart_listing.item_new colspan: 12, link: new_product_path
 
 = smart_listing.paginate 
 = smart_listing.pagination_per_page_links
-
+#products_to_add_to_fridge
+  = render "products/products_to_add_to_fridge"
 
 
 

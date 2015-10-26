@@ -1,0 +1,7 @@
+<% @products_to_buy.each do |item| %>
+  <%#= smart_listing_item :cart, :update, item, "products/product_to_buy_data" %>
+  console.log('tr[data-id="<%= item.id %>"]');
+  $('#products_to_buy').find('tr[data-id="<%= item.id %>"]').remove();
+<% end %>
+$("#products_to_buy").smart_listing().fadeLoaded();
+$("#products_to_add_to_fridge").html("<%= escape_javascript(render("products/products_to_add_to_fridge")) %>");
