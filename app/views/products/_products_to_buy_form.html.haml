@@ -21,7 +21,7 @@
         / # = f.input :unit_price
         .row
           .col-sm-6
-            = f.input :expiration_date
+            = f.input :expiration_date, include_blank: true
           .col-sm-6 
             = f.input :purchase_date
         = f.hidden_field :product_cycle, value: 'to_buy'

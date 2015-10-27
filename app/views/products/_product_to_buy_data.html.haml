@@ -4,7 +4,6 @@
   %td= object.product_type
   %td= object.quantity 
   %td= object.unit_measurement
-  %td= object.expiration_date
   %td= object.price
   %td.text-capitalize= object.store
   %td.actions.text-center= smart_listing_item_actions [{name: :edit, url: edit_product_path(object)}, {name: :destroy, url: product_path(object), confirmation: "Are you sure you want to delete this?"}]
