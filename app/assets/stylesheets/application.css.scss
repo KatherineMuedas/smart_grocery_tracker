@@ -22,7 +22,8 @@
   font-family:"Courier New", Courier, monospace;
 }
 .text-orange{
-  color: orange !important; 
+  color: darken(orange, 10%) !important; 
+  font-weight: bold;
 }
 
 .message-bottom{
@@ -32,6 +33,6 @@
   // width: 45%;
   // padding-top: 15px;
   padding-left: 15px;
-  color: darken(orange, 5%);
+  color: darken(orange, 10%);
   font-size: 16px;
 }
