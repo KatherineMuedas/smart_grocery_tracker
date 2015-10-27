@@ -1,9 +1,9 @@
 - if @selected_products.present?
   = link_to move_to_inventory_path, :class => "btn btn-primary pull-right", :remote => true, :method => :put do
     %i.glyphicon.glyphicon-send
-    = "Move to fridge"
+    = "Move to inventory"
   = link_to "Clear", products_path(:clear => true), :class => "btn btn-link pull-right", :remote => true
-  %h4
+  %h5
     = "You have selected"
     = pluralize( @selected_products.count, "item")
-    = "to move to your personal inventory"
+    = "to move to your personal inventory."

@@ -24,3 +24,14 @@
 .text-orange{
   color: orange !important; 
 }
+
+.message-bottom{
+  // border: 1px solid darken(orange, 10%);
+  // border-radius: 15px;
+  // height: 50%;
+  // width: 45%;
+  // padding-top: 15px;
+  padding-left: 15px;
+  color: darken(orange, 5%);
+  font-size: 16px;
+}
