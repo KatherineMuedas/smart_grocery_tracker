@@ -2,6 +2,7 @@
   .row
     .col-sm-12
       = simple_form_for object, url: object.new_record? ? fridges_path : fridge_path(object), remote: true, html: {class: "form-horizontal"} do |f|
+        = f.error_notification 
         .row
           .col-sm-6
             = f.input :name

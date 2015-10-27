@@ -18,11 +18,6 @@ class ProductsController < ApplicationController
   
   def create
     @product = Product.create(product_params)
-    # if @product.save
-    #   redirect_to products_path, notice: 'Successfully created.'
-    # else
-    #   render 'new', alert: 'Error'
-    # end
   end
 
   def edit
