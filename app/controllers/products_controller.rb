@@ -64,7 +64,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :product_type, :product_cycle, :quantity, :unit_measurement, :store, :price, :unit_price, :purchase_date, :user_id)
+    params.require(:product).permit(:name, :product_type, :product_cycle, :quantity,:expiration_date, :unit_measurement, :store, :price, :unit_price, :purchase_date, :user_id)
   end
 
   def set_selected_products
