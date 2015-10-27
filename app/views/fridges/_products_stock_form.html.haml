@@ -12,7 +12,7 @@
           .col-sm-6
             = f.input :quantity
           .col-sm-6
-            = f.input :unit_measurement, collection: Product::PRODUCT_MEASUREMENTS, prompt: "Select measurement"
+            = f.input :unit_measurement, collection: Product::PRODUCT_MEASUREMENTS, prompt: "Select measurement", include_blank: true
         .row
           .col-sm-6
             = f.input :store
